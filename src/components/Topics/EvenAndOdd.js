@@ -14,8 +14,8 @@ export default class EvenAndOdd extends Component {
     this.setState({ userInput: val });
   }
 
-  sepEvenAndOdds() {
-    let bank = this.state.userInput.split("");
+  sepEvenAndOdds(userInput) {
+    let bank = userInput.split("");
     let eArr = [];
     let oArr = [];
     for (let i = 0; i < bank.length; i++) {
@@ -25,6 +25,7 @@ export default class EvenAndOdd extends Component {
         eArr.push(parseInt(bank[i]));
       }
     }
+    this.setState({ evenArray: eArr, oddArray: oArr });
   }
 
   render() {
